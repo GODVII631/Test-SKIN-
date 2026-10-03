@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-primary: 'Plus Jakarta Sans', 'Kanit', sans-serif;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    @apply antialiased transition-colors duration-200 overflow-x-hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+/* Safe area padding helper for modern mobile devices */
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 0.75rem);
+}
+
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 0.5rem);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
